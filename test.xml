@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="humans automation">
+    <parameter name="url" value="https://humans.net/"/>
+    <parameter name="username" value="your username"/>
+    <parameter name="password" value="your password"/>
+    <test name="humans">
+        <classes>
+            <class name="testing.HomePageTest">
+                <methods>
+                    <include name="returnLoginObject"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

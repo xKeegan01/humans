@@ -5,13 +5,14 @@ import org.testng.annotations.Test;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 
-public class HomePageTest extends InitTestData {
+public class LoginPageTest extends InitTestData {
 
     @Test
-    public void returnLoginObject() {
+    public void loginValidCredentials() {
         HomePage homePage = new HomePage(driver);
         homePage.openDriver(url);
         LoginPage loginPage = homePage.getLoginPage();
-        Assert.assertTrue(loginPage.isSubmitDisplayed());
+        homePage = loginPage.login(username, password);
+        Assert.assertTrue(homePage.isDisplayed());
     }
 }

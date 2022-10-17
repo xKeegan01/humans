@@ -10,6 +10,12 @@
                     <include name="returnLoginObject"/>
                 </methods>
             </class>
+            <class name="testing.LoginPageTest">
+                <methods>
+                    <include name="loginValidCredentials"/>
+                    <include name="loginPageFactory"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

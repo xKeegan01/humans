@@ -26,10 +26,8 @@ public class LoginPageFactory {
     private WebElement submitButton;
 
     public HomePage login(String username, String password) {
-        //StaleElementReferenceException - refresh page before locating elements
-        driver.navigate().refresh();
-        emailField.sendKeys(username);
         passwordField.sendKeys(password);
+        emailField.sendKeys(username);
         submitButton.click();
         return new HomePage(driver);
     }

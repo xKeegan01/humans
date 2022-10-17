@@ -31,13 +31,4 @@ public class LoginPageFactory {
         submitButton.click();
         return new HomePage(driver);
     }
-
-    public boolean isSubmitDisplayed() {
-        try {
-            return submitButton.isDisplayed();
-        } catch (NoSuchElementException ex) {
-            ex.printStackTrace();
-            return false;
-        }
-    }
 }

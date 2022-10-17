@@ -8,6 +8,12 @@ public class LoginPage extends InitPageData {
         super(driver);
     }
 
+    private WebElement getErrorMessage() {
+        By locator = By.xpath("//*[text()='Incorrect login or password']");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return driver.findElement(locator);
+    }
+
     private WebElement getUsernameInput() {
         By locator = By.xpath("//*[@type='text']");
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
@@ -37,7 +43,16 @@ public class LoginPage extends InitPageData {
     public boolean isSubmitDisplayed() {
         try {
             return getSubmitButton().isDisplayed();
-        } catch (NoSuchElementException ex) {
+        } catch (TimeoutException | NoSuchElementException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean isError() {
+        try {
+            return getErrorMessage().isDisplayed();
+        } catch (TimeoutException | NoSuchElementException ex) {
             ex.printStackTrace();
             return false;
         }

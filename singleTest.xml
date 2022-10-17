@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="humans automation">
+    <parameter name="url" value="https://humans.net/"/>
+    <parameter name="username" value="leyacan366@imdutex.com"/>
+    <parameter name="password" value="q1w2e3r4t5y6"/>
+    <test name="humans">
+        <classes>
+            <class name="testing.LoginPageTest">
+                <methods>
+                    <include name="loginInvalidCredentials"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

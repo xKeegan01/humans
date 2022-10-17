@@ -18,6 +18,16 @@ public class LoginPageTest extends InitTestData {
     }
 
     @Test
+    public void loginInvalidCredentials() {
+        HomePage homePage = new HomePage(driver);
+        homePage.openDriver(url);
+        LoginPage loginPage = homePage.getLoginPage();
+        loginPage.login("wrongUsername@email.com", "wrongPassword");
+        Assert.assertTrue(loginPage.isError());
+    }
+
+
+    @Test
     public void loginPageFactory() {
         HomePage homePage = new HomePage(driver);
         homePage.openDriver(url);

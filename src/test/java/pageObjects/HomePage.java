@@ -40,4 +40,9 @@ public class HomePage extends InitPageData {
         getLoginButton().click();
         return new LoginPage(driver);
     }
+
+    public LoginPageFactory getLoginPageFactory() {
+        getLoginButton().click();
+        return new LoginPageFactory(driver);
+    }
 }

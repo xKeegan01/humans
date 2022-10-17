@@ -10,7 +10,7 @@ public class LoginPage extends InitPageData {
 
     private WebElement getUsernameInput() {
         By locator = By.xpath("//*[@type='text']");
-        wait.until(ExpectedConditions.elementToBeClickable(locator));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         return driver.findElement(locator);
     }
 
@@ -26,8 +26,10 @@ public class LoginPage extends InitPageData {
     }
 
     public HomePage login(String username, String password) {
-        getPasswordInput().sendKeys(password);
+        //StaleElementReferenceException
+        driver.navigate().refresh();
         getUsernameInput().sendKeys(username);
+        getPasswordInput().sendKeys(password);
         getSubmitButton().click();
         return new HomePage(driver);
     }

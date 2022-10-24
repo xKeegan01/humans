@@ -45,4 +45,9 @@ public class HomePage extends InitPageData {
         getLoginButton().click();
         return new LoginPageFactory(driver);
     }
+
+    public ProfilePage getProfilePage() {
+        getProfileIcon().click();
+        return new ProfilePage(driver);
+    }
 }

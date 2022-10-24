@@ -18,6 +18,7 @@ public class InitTestData extends InitBrowser {
         this.url = url;
         this.username = username;
         this.password = password;
+
     }
 
     @AfterMethod

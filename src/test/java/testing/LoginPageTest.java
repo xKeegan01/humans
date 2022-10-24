@@ -26,7 +26,6 @@ public class LoginPageTest extends InitTestData {
         Assert.assertTrue(loginPage.isError());
     }
 
-
     @Test
     public void loginPageFactory() {
         HomePage homePage = new HomePage(driver);

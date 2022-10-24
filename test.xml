@@ -14,6 +14,12 @@
                 <methods>
                     <include name="loginValidCredentials"/>
                     <include name="loginPageFactory"/>
+                    <include name="loginInvalidCredentials"/>
+                </methods>
+            </class>
+            <class name="testing.ProfilePageTest">
+                <methods>
+                    <include name="getProfilePage"/>
                 </methods>
             </class>
         </classes>

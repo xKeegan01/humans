@@ -20,6 +20,7 @@
             <class name="testing.ProfilePageTest">
                 <methods>
                     <include name="getProfilePage"/>
+                    <include name="addDeleteProfileStory"/>
                 </methods>
             </class>
         </classes>

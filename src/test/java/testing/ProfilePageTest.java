@@ -18,7 +18,7 @@ public class ProfilePageTest extends InitTestData {
     }
 
     @Test
-    public void addDeleteProfileStory() {
+    public void addProfileStory() {
         HomePage homePage = new HomePage(driver);
         homePage.openDriver(url);
         LoginPage loginPage = homePage.getLoginPage();
@@ -27,8 +27,16 @@ public class ProfilePageTest extends InitTestData {
         profilePage.addPersonalStory("test personal story");
         Assert.assertTrue(profilePage.isProfileStoryCreated());
         Assert.assertTrue(profilePage.isEditVisible());
+    }
+
+    @Test
+    public void deleteProfileStory() {
+        HomePage homePage = new HomePage(driver);
+        homePage.openDriver(url);
+        LoginPage loginPage = homePage.getLoginPage();
+        homePage = loginPage.login(username, password);
+        ProfilePage profilePage = homePage.getProfilePage();
         profilePage.deletePersonalStory();
         Assert.assertTrue(profilePage.isProfileStoryDeleted());
-
     }
 }
